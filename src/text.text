@@ -1,0 +1,18 @@
+- src/
+  - components/
+    - common/
+      - Navbar.js
+      - Footer.js
+    - home/
+      - Home.js
+    - product/
+      - Product.js
+    - cart/
+      - Cart.js
+  - containers/
+    - ProductContainer.js
+    - CartContainer.js
+  - utils/
+  - styles/
+  - App.js
+  - index.js

@@ -71,7 +71,7 @@ const DetailsProducts = (props) => {
             />
           </div>
           <button
-            onClick={() => addCart({ id: product.id, count })}
+            onClick={() => addCart({ id: product.id, count, price: product.price })}
             className="w-full mt-10 p-2 rounded bg-green-600 hover:bg-green-500 font-semibold text-xl"
           >
             Add to cart

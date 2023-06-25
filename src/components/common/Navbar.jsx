@@ -33,19 +33,26 @@ const Navbar = (props) => {
             >
               <li className="hover:text-yellow-500">Category</li>
             </Link>
-            <li className="cursor-pointer hover:text-yellow-500">Contact</li>
+            <Link
+              className="cursor-pointer  text-white  no-underline"
+              to="/contact"
+            >
+              <li className="cursor-pointer hover:text-yellow-500">Contact</li>
+            </Link>
 
             <li className="cursor-pointer hover:text-yellow-500">About us</li>
           </ul>
-          <div className="relative">
-            <ShoppingCartIcon
-              fontSize="large"
-              className="z-10 cursor-pointer hover:text-yellow-500"
-            />
-            <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-              {add.length ? add.length : <AddIcon />}
-            </span>
-          </div>
+          <Link className="cursor-pointer  text-white  no-underline" to="/cart">
+            <div className="relative">
+              <ShoppingCartIcon
+                fontSize="large"
+                className="z-10 cursor-pointer hover:text-yellow-500"
+              />
+              <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
+                {add.length ? add.length : <AddIcon />}
+              </span>
+            </div>
+          </Link>
         </div>
         <div className="md:hidden flex items-center">
           {isMobileMenuOpen ? (
@@ -75,13 +82,18 @@ const Navbar = (props) => {
             </Link>
             <li className="cursor-pointer hover:text-yellow-500">Contacto</li>
             <li className="cursor-pointer hover:text-yellow-500">About us</li>
-            <div className="relative hover:text-yellow-500 cursor-pointer">
-              Cart
-              <ShoppingCartIcon fontSize="medium" className="z-10 " />
-              <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-                {add.length ? add.length : <AddIcon />}
-              </span>
-            </div>
+            <Link
+              className="cursor-pointer  text-white  no-underline"
+              to="/cart"
+            >
+              <div className="relative hover:text-yellow-500 cursor-pointer">
+                Cart
+                <ShoppingCartIcon fontSize="medium" className="z-10 " />
+                <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
+                  {add.length ? add.length : <AddIcon />}
+                </span>
+              </div>
+            </Link>
           </ul>
         </div>
       )}

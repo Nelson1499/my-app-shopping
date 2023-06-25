@@ -11,7 +11,7 @@ function App() {
     <div className="bg-slate-700 text-center pb-6 min-h-screen">
       <Router>
         <Navbar add={addProducts} setaddProducts={setaddProducts} />
-        <Routes add={addProducts} setaddProducts={setaddProducts} />
+        <Routes add={addProducts} setaddProducts={setaddProducts} /> 
       </Router>
     </div>
   );

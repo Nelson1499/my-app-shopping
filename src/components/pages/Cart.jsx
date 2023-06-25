@@ -9,13 +9,19 @@ const Cart = (props) => {
     calculateTotalSum();
   }, [add]);
 
+  /**
+   * Cálculo del total multiplicando la cantidad de productos por su precio
+    y sumando los resultados.
+   */
   const calculateTotalSum = () => {
     const result = add.map((obj) => obj.count * obj.price);
     const sumTotal = result.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0
     );
-    setTotalSum(sumTotal);
+    setTotalSum(sumTotal?.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,}));
   };
   return (
     <div className="lg:flex justify-between mx-2">

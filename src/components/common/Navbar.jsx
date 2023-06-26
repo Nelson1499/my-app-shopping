@@ -39,8 +39,12 @@ const Navbar = (props) => {
             >
               <li className="cursor-pointer hover:text-yellow-500">Contact</li>
             </Link>
-
-            <li className="cursor-pointer hover:text-yellow-500">About us</li>
+            <Link
+              className="cursor-pointer  text-white  no-underline"
+              to="/about-us"
+            >
+              <li className="cursor-pointer hover:text-yellow-500">About us</li>
+            </Link>
           </ul>
           <Link className="cursor-pointer  text-white  no-underline" to="/cart">
             <div className="relative">
@@ -80,8 +84,18 @@ const Navbar = (props) => {
             >
               <li className="hover:text-yellow-500">Categorías</li>
             </Link>
-            <li className="cursor-pointer hover:text-yellow-500">Contacto</li>
-            <li className="cursor-pointer hover:text-yellow-500">About us</li>
+            <Link
+              className="cursor-pointer  text-white  no-underline"
+              to="/contact"
+            >
+              <li className="cursor-pointer hover:text-yellow-500">Contacto</li>
+            </Link>
+            <Link
+              className="cursor-pointer  text-white  no-underline"
+              to="/about-us"
+            >
+              <li className="cursor-pointer hover:text-yellow-500">About us</li>
+            </Link>
             <Link
               className="cursor-pointer  text-white  no-underline"
               to="/cart"

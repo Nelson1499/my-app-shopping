@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ProductContainer = () => {
   const [products, setproducts] = useState([]);
-  const history =  useHistory();
+  const history = useHistory();
   const getAllProducts = () => {
     getAllProduct()
       .then((res) => setproducts(res.data))
@@ -15,7 +15,7 @@ const ProductContainer = () => {
   }, []);
   const navigate = (path) => {
     history.push(path);
-  }
+  };
   return (
     <div className="flex flex-col mx-1 my-5">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 transition-shadow ">
@@ -34,7 +34,12 @@ const ProductContainer = () => {
               <h3 className="text-base font-semibold p-1 m-0">
                 Price: U$ {product.price}
               </h3>
-              <button onClick={()=>navigate(`/details/${product.id}`)} className="bg-emerald-500 hover:bg-emerald-300 text-lg font-bold rounded-lg p-1 w-3/4">See Product</button>
+              <button
+                onClick={() => navigate(`/details/${product.id}`)}
+                className="bg-emerald-500 hover:bg-emerald-300 text-lg font-bold rounded-lg p-1 w-3/4"
+              >
+                See Product
+              </button>
             </div>
           </div>
         ))}

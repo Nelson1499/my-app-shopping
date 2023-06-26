@@ -1,0 +1,31 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    },
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "no-mixed-spaces-and-tabs": "error",
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}

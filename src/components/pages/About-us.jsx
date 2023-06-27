@@ -12,14 +12,14 @@ const AboutUs = () => {
         una API REST conocida como Fake Store API.
       </p>
       <p>
-        Esta demostración ha sido creada por [Nombre del Programador], un
+        Esta demostración ha sido creada por Avalos Nelson, un
         apasionado desarrollador que ha utilizado su experiencia para ofrecerte
         una experiencia interactiva y realista en esta tienda en línea
         demostrativa.
       </p>
       <p>
         Si tienes alguna pregunta o comentario sobre esta demostración o estás
-        interesado en trabajar con [Nombre del Programador] en futuros
+        interesado en trabajar con Avalos Nelson en futuros
         proyectos, no dudes en ponerte en contacto a través de cualquiera de los
         siguientes medios:
       </p>

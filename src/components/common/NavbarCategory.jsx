@@ -12,7 +12,7 @@ import { getAllCategory } from "../../utils/category";
  */
 const NavbarCategory = (props) => {
   const [categorys, setcategorys] = useState([]);
-  const { setselectCategorys } = props;
+  const { setselectCategorys, setisLoading } = props;
   const getCategory = () => {
     getAllCategory()
       .then((res) => setcategorys(res.data))
@@ -49,7 +49,10 @@ const NavbarCategory = (props) => {
             className="text-2xl font-semibold"
             control={<Radio className="text-white" />}
             label={category}
-            onClick={() => selectCategory(category)}
+            onClick={() => {
+              selectCategory(category);
+              setisLoading(false);
+            }}
           />
         ))}
       </RadioGroup>

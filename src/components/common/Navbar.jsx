@@ -17,10 +17,14 @@ const Navbar = (props) => {
   return (
     <div className="bg-gray-700 py-2">
       <nav className="container mx-auto px-4 py-2 md:py-4 flex items-center justify-between">
-        <div className="flex items-center cursor-pointer">
-          <h1 className="text-white text-3xl font-extrabold z-10">Shopping</h1>
-          <LocalMallIcon className="text-yellow-400 h-8 w-8 ml-2" />
-        </div>
+        <Link className="cursor-pointer  text-white  no-underline" to="/">
+          <div className="flex items-center cursor-pointer">
+            <h1 className="text-white text-3xl font-extrabold z-10">
+              Shopping
+            </h1>
+            <LocalMallIcon className="text-yellow-400 h-8 w-8 ml-2" />
+          </div>
+        </Link>
         <div className="hidden md:flex items-center space-x-4 text-white text-2xl font-semibold px-2">
           <ul className="flex items-center space-x-4">
             <Link className="cursor-pointer  text-white  no-underline" to="/">

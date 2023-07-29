@@ -1,5 +1,16 @@
 import axios from "axios";
 
-export const getAllCategory = () => {
-  return axios.get("https://fakestoreapi.com/products/categories");
+let cachedResponse = null;
+
+export const getAllCategory = async () => {
+  if (cachedResponse) {
+    return cachedResponse;
+  } else {
+    const response = await axios.get(
+      "https://fakestoreapi.com/products/categories"
+    );
+    cachedResponse = response;
+
+    return response;
+  }
 };

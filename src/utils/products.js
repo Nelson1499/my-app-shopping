@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getAllProduct = () => {
-  return axios.get("https://fakestoreapi.com/products");
+  return axios.get("https://dummyjson.com/products");
 };
 
 export const getProductPopular = () => {

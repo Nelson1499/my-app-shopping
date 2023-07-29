@@ -1,5 +1,5 @@
-import Home from "../components/pages/Home";
 import React from "react";
+import Home from "../components/pages/Home";
 import { Route, Switch } from "react-router-dom";
 import Category from "../components/pages/Category";
 import DetailsProducts from "../components/pages/DetailsProducts";
@@ -7,22 +7,20 @@ import Cart from "../components/pages/Cart";
 import Contact from "../components/pages/Contact";
 import AboutUs from "../components/pages/About-us";
 
-const Routes = (props) => {
-  // Rutas necesarias para la navegacion de la app store!!
-  const { add, setaddProducts } = props;
+const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" render={() => <Home />} />
-      <Route exact path="/category" render={() => <Category />} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/category" component={Category} />
       <Route
         exact
         path="/details/:id"
-        render={() => <DetailsProducts add={add} setAdd={setaddProducts} />}
+        component={DetailsProducts}
       />
       <Route
         exact
         path="/cart"
-        render={() => <Cart add={add} setAdd={setaddProducts} />}
+        component={Cart}
       />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/about-us" component={AboutUs} />

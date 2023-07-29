@@ -4,13 +4,14 @@ import { getProduct } from "../../utils/products";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Loading from "../../assets/Loading.gif";
+import { useCart } from "../../hooks/useCart";
 
-const DetailsProducts = (props) => {
+const DetailsProducts = () => {
+  const { cart, addToCart } = useCart();
   const { id } = useParams();
   const [product, setproduct] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   const [count, setcount] = useState(1);
-  const { add, setAdd } = props;
   const obtainProduct = () => {
     getProduct(id)
       .then((res) => {
@@ -24,35 +25,14 @@ const DetailsProducts = (props) => {
   useEffect(() => {
     obtainProduct();
   }, [id]);
-  /**
-   * Agrega productos al carrito.
-   *
-   * @param {*} data - Los datos del producto a agregar.
-   */
-  const addCart = (data) => {
-    const existingItem = add.find((item) => item.id === data.id);
-
-    if (!existingItem) {
-      setAdd([...add, data]);
-    } else {
-      const updatedAdd = add.map((item) => {
-        if (item.id === data.id) {
-          return { ...item, count: item.count + data.count };
-        }
-        return item;
-      });
-
-      setAdd(updatedAdd);
-    }
-  };
   return (
     <div className="flex items-center">
       <div className="lg:flex block m-auto container transition-shadow duration-300">
         {isLoading ? (
           <>
-            <div className="p-5 bg-white rounded-lg w-80 lg:w-auto mx-auto lg:mx-1">
+            <div className="p-5 h-max bg-white rounded-lg w-80 lg:w-auto mx-auto lg:mx-1">
               <img
-                className="rounded lg:h-96 lg:w-96 w-72 h-72 m-auto"
+                className="rounded lg:w-96 w-72 max-h-72 m-auto"
                 src={product.image}
                 alt="ProductImage"
               />
@@ -65,7 +45,7 @@ const DetailsProducts = (props) => {
                 Description: {product.description}
               </p>
               <p className="text-2xl font-semibold">
-                Price: {product.price}
+                Price: ${product.price}
               </p>
               <div className="flex bg-green-600 w-max p-2 rounded items-center">
                 <AddIcon
@@ -84,7 +64,7 @@ const DetailsProducts = (props) => {
               </div>
               <button
                 onClick={() =>
-                  addCart({ id: product.id, count, price: product.price })
+                  addToCart({product, count})
                 }
                 className="w-full mt-10 p-2 rounded bg-green-600 hover:bg-green-500 font-semibold text-xl"
               >

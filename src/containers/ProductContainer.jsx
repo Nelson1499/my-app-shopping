@@ -10,7 +10,7 @@ const ProductContainer = () => {
   const getAllProducts = () => {
     getAllProduct()
       .then((res) => {
-        setproducts(res.data);
+        setproducts(res.data.products);
         setTimeout(() => {
           setisLoading(true);
         }, 3000);
@@ -32,7 +32,7 @@ const ProductContainer = () => {
               <div className="border-2 border-slate-700 items-center py-2 bg-white rounded-lg">
                 <img
                   className="md:w-40 md:h-40  w-28 h-28 m-auto"
-                  src={product.image}
+                  src={product.thumbnail}
                   alt="product"
                 />
                 <h3 className="text-base font-semibold p-0 m-0">

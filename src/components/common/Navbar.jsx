@@ -6,13 +6,16 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
+import { useCart } from "../../hooks/useCart";
 
-const Navbar = (props) => {
+const Navbar = () => {
+  const { cart } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { add, setaddProducts } = props;
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  console.log(cart);
 
   return (
     <div className="bg-gray-700 py-2">
@@ -57,7 +60,7 @@ const Navbar = (props) => {
                 className="z-10 cursor-pointer hover:text-yellow-500"
               />
               <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-                {add.length ? add.length : <AddIcon />}
+                {cart.length ? cart.length : <AddIcon />}
               </span>
             </div>
           </Link>
@@ -108,7 +111,7 @@ const Navbar = (props) => {
                 Cart
                 <ShoppingCartIcon fontSize="medium" className="z-10 " />
                 <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-                  {add.length ? add.length : <AddIcon />}
+                  {cart.length ? cart.length : <AddIcon />}
                 </span>
               </div>
             </Link>

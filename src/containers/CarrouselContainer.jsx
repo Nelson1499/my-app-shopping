@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { getProductPopular } from "../utils/products";
 import SellIcon from "@mui/icons-material/Sell";

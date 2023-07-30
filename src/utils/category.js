@@ -7,7 +7,7 @@ export const getAllCategory = async () => {
     return cachedResponse;
   } else {
     const response = await axios.get(
-      "https://fakestoreapi.com/products/categories"
+      "https://dummyjson.com/products/categories"
     );
     cachedResponse = response;
 

@@ -5,6 +5,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Loading from "../../assets/Loading.gif";
 import { useCart } from "../../hooks/useCart";
+import { Carousel } from "react-bootstrap";
 
 const DetailsProducts = () => {
   const { cart, addToCart } = useCart();
@@ -25,17 +26,32 @@ const DetailsProducts = () => {
   useEffect(() => {
     obtainProduct();
   }, [id]);
+  const formatPrice = (price, discount) => {
+    const valor = price - (price * discount) / 100;
+    return valor.toLocaleString("es-AR", {
+      style: "currency",
+      currency: "ARS",
+      minimumFractionDigits: 2,
+    });
+  };
+  console.log(product);
   return (
     <div className="flex items-center">
       <div className="lg:flex block m-auto container transition-shadow duration-300">
         {isLoading ? (
           <>
-            <div className="p-5 h-max bg-white rounded-lg w-80 lg:w-auto mx-auto lg:mx-1">
-              <img
-                className="rounded lg:w-96 w-72 max-h-72 m-auto"
-                src={product.image}
-                alt="ProductImage"
-              />
+            <div className="h-max bg-white rounded-lg w-80 md:w-auto mx-auto">
+              <Carousel variant="dark" className=" md:w-96 md:h-80 w-80 h-72 pt-2 rounded-lg m-auto" >
+                {product.images.map((img, i) => (
+                  <Carousel.Item key={i}>
+                    <img
+                      className="rounded w-9/12 h-60 m-auto"
+                      src={img}
+                      alt="ProductImage"
+                    />
+                  </Carousel.Item>
+                ))}
+              </Carousel>
             </div>
             <div className="text-white container md:w-9/12 m-auto my-5 text-left">
               <h3 className="text-3xl font-semibold">
@@ -45,7 +61,7 @@ const DetailsProducts = () => {
                 Description: {product.description}
               </p>
               <p className="text-2xl font-semibold">
-                Price: ${product.price}
+                Price: {formatPrice(product.price, product.discountPercentage)}
               </p>
               <div className="flex bg-green-600 w-max p-2 rounded items-center">
                 <AddIcon
@@ -63,9 +79,7 @@ const DetailsProducts = () => {
                 />
               </div>
               <button
-                onClick={() =>
-                  addToCart({product, count})
-                }
+                onClick={() => addToCart({ product, count })}
                 className="w-full mt-10 p-2 rounded bg-green-600 hover:bg-green-500 font-semibold text-xl"
               >
                 Add to cart

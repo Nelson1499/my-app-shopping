@@ -7,7 +7,7 @@ const AboutUs = () => {
         esta plataforma es únicamente una demostración y los productos que aquí
         encuentres no son reales. Hemos desarrollado este sitio utilizando la
         tecnología de React y hemos integrado datos ficticios provenientes de
-        una API REST conocida como Fake Store API.
+        una API REST conocida como DummyJSON.
       </p>
       <p>
         Esta demostración ha sido creada por Avalos Nelson, un

@@ -5,13 +5,13 @@ export const getAllProduct = () => {
 };
 
 export const getProductPopular = () => {
-  return axios.get("https://fakestoreapi.com/products?limit=5");
+  return axios.get("https://dummyjson.com/products?limit=10");
 };
 
-export const getProductCategory = (props) => {
-  return axios.get("https://fakestoreapi.com/products/category/" + props);
+export const getProductCategory = (category) => {
+  return axios.get("https://dummyjson.com/products/category/" + category);
 };
 
 export const getProduct = (id) => {
-  return axios.get("https://fakestoreapi.com/products/" + id);
+  return axios.get("https://dummyjson.com/products/" + id);
 };

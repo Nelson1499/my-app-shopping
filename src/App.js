@@ -1,6 +1,6 @@
 import Navbar from "./components/common/Navbar";
 import Routes from "./routes/routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { CartProvider } from "./context/cart.context";
 
 function App() {

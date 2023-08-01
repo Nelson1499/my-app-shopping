@@ -50,10 +50,10 @@ const ProductContainer = () => {
                   {formatPrice(product.price, 0)}
                 </h3>
                 <div className="flex justify-center font-semibold p-1 m-0">
-                  <h3 className="text-xl mx-2">
+                  <h3 className="text-xl mx-1">
                     {formatPrice(product.price, product.discountPercentage)}
                   </h3>
-                  <small className="text-base text-green-500">{product.discountPercentage}% OFF </small>
+                  <small className="text-sm md:text-base  text-green-500">{product.discountPercentage}% OFF </small>
                 </div>
                 <button
                   onClick={() => navigate(`/details/${product.id}`)}

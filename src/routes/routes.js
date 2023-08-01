@@ -6,6 +6,7 @@ import DetailsProducts from "../components/pages/DetailsProducts";
 import Cart from "../components/pages/Cart";
 import Contact from "../components/pages/Contact";
 import AboutUs from "../components/pages/About-us";
+import success from "../components/pages/success";
 
 const Routes = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
       />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/about-us" component={AboutUs} />
+      <Route exact path="/successful-purchase" component={success} />
     </Switch>
   );
 };

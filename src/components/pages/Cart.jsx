@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 import CartContainer from "../../containers/CartContainer";
-import Loading from "../../assets/Loading.gif";
 import { useCart } from "../../hooks/useCart";
+import { stripePost } from "../../utils/stripe";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart } = useCart();
 
   const total = cart.reduce((accumulator, element) => {
     const multiplication =
@@ -33,7 +32,7 @@ const Cart = () => {
           <h3>Total</h3>
           <h3>{formattedTotal}</h3>
         </div>
-        <button className="w-11/12 p-3 mx-3 bg-green-500 rounded text-xl font-semibold mt-auto">
+        <button onClick={()=>stripePost(cart)} className="w-11/12 p-3 mx-3 bg-green-500 rounded text-xl font-semibold mt-auto">
           Process purchase
         </button>
       </div>

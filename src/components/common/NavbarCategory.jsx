@@ -28,7 +28,6 @@ const NavbarCategory = (props) => {
   const selectCategory = (data) => {
     setselectCategorys(data);
   };
-  console.log(categorys);
   return (
     <FormControl className="m-auto mx-3">
       <h1
@@ -52,7 +51,6 @@ const NavbarCategory = (props) => {
             label={category}
             onClick={() => {
               selectCategory(category);
-              console.log(category);
               setisLoading(false);
             }}
           />

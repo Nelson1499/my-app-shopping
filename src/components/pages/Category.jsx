@@ -65,7 +65,7 @@ const Category = () => {
                   <h3 className="text-xl mx-2">
                     {formatPrice(product.price, product.discountPercentage)}
                   </h3>
-                  <small className="text-base text-green-500">{product.discountPercentage}% OFF </small>
+                  <small className="text-sm md:text-base text-green-500">{product.discountPercentage}% OFF </small>
                 </div>
                 <button
                   onClick={() => navigate(`/details/${product.id}`)}

@@ -15,8 +15,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  console.log(cart);
-
   return (
     <div className="bg-gray-700 py-2">
       <nav className="container mx-auto px-4 py-2 md:py-4 flex items-center justify-between">
@@ -59,7 +57,7 @@ const Navbar = () => {
                 fontSize="large"
                 className="z-10 cursor-pointer hover:text-yellow-500"
               />
-              <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
+              <span className="border-2 bg-yell border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
                 {cart.length ? cart.length : <AddIcon />}
               </span>
             </div>

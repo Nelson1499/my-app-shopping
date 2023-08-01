@@ -10,16 +10,20 @@ const AboutUs = () => {
         una API REST conocida como DummyJSON.
       </p>
       <p>
-        Esta demostración ha sido creada por Avalos Nelson, un
-        apasionado desarrollador que ha utilizado su experiencia para ofrecerte
-        una experiencia interactiva y realista en esta tienda en línea
-        demostrativa.
+        Para pagar podrás utilizar las tarjetas de prueba de Stripe,{" "}
+        <a className="text-white" href="https://stripe.com/docs/testing?locale=es-419" target="_blank">
+          presiona aquí para ir a ver las tarjetas.
+        </a>
+      </p>
+      <p>
+        Esta demostración ha sido creada por Avalos Nelson, un apasionado
+        desarrollador que ha utilizado su experiencia para ofrecerte una
+        experiencia interactiva y realista en esta tienda en línea demostrativa.
       </p>
       <p>
         Si tienes alguna pregunta o comentario sobre esta demostración o estás
-        interesado en trabajar con Avalos Nelson en futuros
-        proyectos, no dudes en ponerte en contacto a través de cualquiera de los
-        siguientes medios:
+        interesado en trabajar con Avalos Nelson en futuros proyectos, no dudes
+        en ponerte en contacto a través de cualquiera de los siguientes medios:
       </p>
       <ul>
         <li>Correo Electrónico: avalosnelson9919@gmail.com</li>

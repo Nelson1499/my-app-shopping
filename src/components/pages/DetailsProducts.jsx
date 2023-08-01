@@ -34,14 +34,13 @@ const DetailsProducts = () => {
       minimumFractionDigits: 2,
     });
   };
-  console.log(product);
   return (
     <div className="flex items-center">
       <div className="lg:flex block m-auto container transition-shadow duration-300">
         {isLoading ? (
           <>
             <div className="h-max bg-white rounded-lg w-80 md:w-auto mx-auto">
-              <Carousel variant="dark" className=" md:w-96 md:h-80 w-80 h-72 pt-2 rounded-lg m-auto" >
+              <Carousel variant="dark" className=" md:w-96 md:h-80 w-80 py-4 h-72 rounded-lg m-auto" >
                 {product.images.map((img, i) => (
                   <Carousel.Item key={i}>
                     <img

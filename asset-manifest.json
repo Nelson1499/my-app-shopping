@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/nelson1499.github.io/my-app-shopping/static/css/main.cd7ddb7c.css",
+    "main.js": "/nelson1499.github.io/my-app-shopping/static/js/main.466a1756.js",
+    "static/media/Loading.gif": "/nelson1499.github.io/my-app-shopping/static/media/Loading.e60b7a83c8e2887a935d.gif",
+    "index.html": "/nelson1499.github.io/my-app-shopping/index.html",
+    "main.cd7ddb7c.css.map": "/nelson1499.github.io/my-app-shopping/static/css/main.cd7ddb7c.css.map",
+    "main.466a1756.js.map": "/nelson1499.github.io/my-app-shopping/static/js/main.466a1756.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd7ddb7c.css",
+    "static/js/main.466a1756.js"
+  ]
+}

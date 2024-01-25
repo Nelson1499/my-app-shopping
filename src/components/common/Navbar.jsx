@@ -52,14 +52,20 @@ const Navbar = () => {
             </Link>
           </ul>
           <Link className="cursor-pointer  text-white  no-underline" to="/cart">
-            <div className="relative">
+            <div className="relative flex">
               <ShoppingCartIcon
                 fontSize="large"
-                className="z-10 cursor-pointer hover:text-yellow-500"
+                className="z-10 cursor-pointer hover:text-yellow-500 text-xl"
               />
-              <span className="border-2 bg-yell border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-                {cart.length ? cart.length : <AddIcon />}
-              </span>
+              <div className="bg-yellow-400 text-slate-700 rounded-full w-6 h-6 items-center absolute -top-2 left-8 flex justify-center">
+                {cart.length ? (
+                  <p className="m-auto text-base"> {cart.length}</p>
+                ) : (
+                  <p className="m-auto text-xs">
+                    <AddIcon />
+                  </p>
+                )}
+              </div>
             </div>
           </Link>
         </div>
@@ -108,9 +114,15 @@ const Navbar = () => {
               <div className="relative hover:text-yellow-500 cursor-pointer">
                 Cart
                 <ShoppingCartIcon fontSize="medium" className="z-10 " />
-                <span className="border-2 border-yellow-400 rounded-full w-6 h-6 flex items-center justify-center text-base absolute -top-4 -right-2 transform translate-x-1/2 translate-y-1/2">
-                  {cart.length ? cart.length : <AddIcon />}
-                </span>
+                <div className="bg-yellow-400 text-slate-700 rounded-full w-6 h-6 items-center absolute -top-2 left-14 flex justify-center">
+                  {cart.length ? (
+                    <p className="m-auto text-base"> {cart.length}</p>
+                  ) : (
+                    <p className="m-auto text-xs">
+                      <AddIcon />
+                    </p>
+                  )}
+                </div>
               </div>
             </Link>
           </ul>

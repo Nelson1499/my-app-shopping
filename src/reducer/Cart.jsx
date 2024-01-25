@@ -41,7 +41,6 @@ const UPDATE_STATE_BY_ACTION = {
     ];
 
     updateLocalStorage(newState);
-    console.log(action.payload);
     return newState;
   },
   [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state, action) => {

@@ -14,34 +14,34 @@ const CarouselContainer = () => {
     getproducts();
   }, []);
   return (
-    <Carousel variant="dark">
-      {products.map((product) => (
-        <Carousel.Item key={product.id}>
-          <h1 className="text-white font-semibold text-xl h-14 mx-2">
-            {product.title}
-          </h1>
-          <div className="relative bg-white w-11/12 py-5 m-auto rounded-lg">
-            <img
-              src={product.thumbnail}
-              className="d-block w-60 m-auto h-56"
-              alt="..."
-            />
+    <article className="items-center justify-center">
+      <Carousel variant="dark" className="m-auto rounded-lg bg-white w-[90%] py-2">
+        {products.map((product) => (
+          <Carousel.Item key={product.id}>
+            <h1 className="font-semibold text-xl mx-2">{product.title}</h1>
+            <div className="relative m-auto items-center justify-center">
+              <img
+                src={product.thumbnail}
+                className="d-block w-60 h-60 m-auto"
+                alt="..."
+              />
 
-            <div className="absolute -top-12 left-44 right-0 bottom-0 flex items-center justify-center">
-              <div className="relative">
-                <SellIcon
-                  className="text-yellow-300"
-                  style={{ fontSize: "6rem" }}
-                />
-                <h3 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg">
-                  {product.discountPercentage}%
-                </h3>
+              <div className="absolute top-0 left-52 right-0 flex items-center justify-center">
+                <div className="relative">
+                  <SellIcon
+                    className="text-red-700"
+                    style={{ fontSize: "6rem" }}
+                  />
+                  <h3 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">
+                    {product.discountPercentage}%
+                  </h3>
+                </div>
               </div>
             </div>
-          </div>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </article>
   );
 };
 

@@ -43,10 +43,10 @@ const Category = () => {
     });
   };
   return (
-    <div className="flex flex-col mx-1 my-2 transition-shadow duration-300">
+    <div className="m-2 transition-shadow duration-300">
       <NavbarCategory setisLoading={setisLoading} setselectCategorys={setselectCategorys} />
       {isLoading ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 py-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 py-4">
           {products.map((product) => (
             <div key={product.id} className="flex-col flex">
               <div className="border-2 border-slate-700 items-center py-2 bg-white rounded-lg">

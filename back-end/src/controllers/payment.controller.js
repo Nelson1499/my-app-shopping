@@ -19,8 +19,8 @@ export const createSession = async (req, res) => {
         quantity: data.quantity,
       })),
       mode: "payment",
-      success_url: "https://nelson1499.github.io/my-app-shopping/#/successful-purchase",
-      cancel_url: "https://nelson1499.github.io/my-app-shopping/#/cart"
+      success_url: URL_SUCCESS,
+      cancel_url:  URL_CANCEL
     });
     
     return res.json(session);

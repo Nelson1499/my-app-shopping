@@ -6,6 +6,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import Loading from "../../assets/Loading.gif";
 import { useCart } from "../../hooks/useCart";
 import { Carousel } from "react-bootstrap";
+import toast, { Toaster } from "react-hot-toast";
 
 const DetailsProducts = () => {
   const { cart, addToCart } = useCart();
@@ -34,13 +35,24 @@ const DetailsProducts = () => {
       minimumFractionDigits: 2,
     });
   };
+  const addProdutToCart = ({ product, count }) => {
+    if (product && count) {
+      addToCart({ product, count });
+      toast.success("You have successfully added your products.");
+    } else {
+    }
+  };
   return (
     <div className="flex items-center">
+      <Toaster />
       <div className="lg:flex block m-auto container transition-shadow duration-300">
         {isLoading ? (
           <>
             <div className="h-max bg-white rounded-lg w-80 md:w-auto mx-auto">
-              <Carousel variant="dark" className=" md:w-96 md:h-80 w-80 py-4 h-72 rounded-lg m-auto" >
+              <Carousel
+                variant="dark"
+                className=" md:w-96 md:h-80 w-80 py-4 h-72 rounded-lg m-auto"
+              >
                 {product.images.map((img, i) => (
                   <Carousel.Item key={i}>
                     <img
@@ -78,7 +90,7 @@ const DetailsProducts = () => {
                 />
               </div>
               <button
-                onClick={() => addToCart({ product, count })}
+                onClick={() => addProdutToCart({ product, count })}
                 className="w-full mt-10 p-2 rounded bg-green-600 hover:bg-green-500 font-semibold text-xl"
               >
                 Add to cart

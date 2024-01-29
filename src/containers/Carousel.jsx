@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { getProductPopular } from "../utils/products";
 import SellIcon from "@mui/icons-material/Sell";
+import { Discount } from "../svg/discount ";
 
 const CarouselContainer = () => {
   const [products, setproducts] = useState([]);
@@ -15,7 +16,10 @@ const CarouselContainer = () => {
   }, []);
   return (
     <article className="items-center justify-center">
-      <Carousel variant="dark" className="m-auto rounded-lg bg-white w-[90%] py-2">
+      <Carousel
+        variant="dark"
+        className="m-auto rounded-lg bg-white w-[90%] py-2"
+      >
         {products.map((product) => (
           <Carousel.Item key={product.id}>
             <h1 className="font-semibold text-xl mx-2">{product.title}</h1>
@@ -26,13 +30,14 @@ const CarouselContainer = () => {
                 alt="..."
               />
 
-              <div className="absolute top-0 left-52 right-0 flex items-center justify-center">
+              <div className="absolute top-0 right-8 md:right-28 items-center justify-center">
                 <div className="relative">
-                  <SellIcon
+                  {/* <SellIcon
                     className="text-red-700"
                     style={{ fontSize: "6rem" }}
-                  />
-                  <h3 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-lg">
+                  /> */}
+                  <Discount />
+                  <h3 className="text-black text-2xl font-bold">
                     {product.discountPercentage}%
                   </h3>
                 </div>

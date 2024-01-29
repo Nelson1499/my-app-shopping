@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 import CartContainer from "../../containers/CartContainer";
 import { useCart } from "../../hooks/useCart";
 import { stripePost } from "../../utils/stripe";
@@ -15,12 +16,25 @@ const Cart = () => {
     style: "currency",
     currency: "USD",
   });
+  const cartProducts = (data) => {
+    if (data.length) {
+      stripePost(data);
+    } else {
+      toast.error("you have no products in the cart, please add products.");
+    }
+    // console.log(data);
+  };
   return (
     <div className="lg:flex justify-between mx-2 transition-shadow duration-300">
-      <div className="gap-2 ">
-        {cart.map((items, i) => (
-          <CartContainer items={items} key={i} />
-        ))}
+      <Toaster />
+      <div className="my-2">
+        {cart.length ? (
+          <article className="grid md:grid-cols-2 gap-2">
+            {cart.map((items, i) => <CartContainer items={items} key={i} />)}
+          </article>
+        ) : (
+          <h3 className="text-white">Add product to cart, please.</h3>
+        )}
       </div>
       <div className="w-11/12 mx-3 lg:w-96 h-96 border border-gray-500 p-2 rounded text-white flex flex-col">
         <div className="flex justify-between m-4">
@@ -32,7 +46,10 @@ const Cart = () => {
           <h3>Total</h3>
           <h3>{formattedTotal}</h3>
         </div>
-        <button onClick={()=>stripePost(cart)} className="w-11/12 p-3 mx-3 bg-green-500 rounded text-xl font-semibold mt-auto">
+        <button
+          onClick={() => cartProducts(cart)}
+          className="w-11/12 p-3 mx-3 bg-green-500 rounded text-xl font-semibold mt-auto"
+        >
           Process purchase
         </button>
       </div>

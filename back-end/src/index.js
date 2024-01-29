@@ -12,4 +12,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(routerPayments);
 
 app.listen(PORT||8000);
-console.log("server on port", PORT||8000);
+console.log("server on port", PORT || 8000);

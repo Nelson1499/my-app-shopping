@@ -30,16 +30,12 @@ const CarouselContainer = () => {
                 alt="..."
               />
 
-              <div className="absolute top-0 right-8 md:right-28 items-center justify-center">
-                <div className="relative">
-                  {/* <SellIcon
-                    className="text-red-700"
-                    style={{ fontSize: "6rem" }}
-                  /> */}
+              <div className="absolute top-0 right-5 md:right-28 items-center justify-center">
+                <div className="relative justify-center items-center">
                   <Discount />
-                  <h3 className="text-black text-2xl font-bold">
+                  <strong className="text-red-600 text-2xl font-extrabold">
                     {product.discountPercentage}%
-                  </h3>
+                  </strong>
                 </div>
               </div>
             </div>
